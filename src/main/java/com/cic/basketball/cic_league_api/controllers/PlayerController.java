@@ -1,7 +1,7 @@
 package com.cic.basketball.cic_league_api.controllers;
 
 import com.cic.basketball.cic_league_api.entities.Player;
-import com.cic.basketball.cic_league_api.repositories.PlayerRepository;
+import com.cic.basketball.cic_league_api.services.PlayerService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,23 +12,36 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/players")
 public class PlayerController
 {
-    private final PlayerRepository repository;
+    private final PlayerService playerService;
 
-    public PlayerController(PlayerRepository repository)
+    /**
+     * Constructor for PlayerController.
+     * @param playerService The player service.
+     */
+    public PlayerController(PlayerService playerService)
     {
-        this.repository = repository;
+        this.playerService = playerService;
     }
 
     /**
-     * <li>@Valid = Triggers the validation rules specified in the {@Link Player} class (e.g @NotNull, etc..)</li>
-     * <li>@RequestBody = Maps the JSON payload of the HTTP request to the Player object.</li>
-     * @param player the player that we are adding.
-     * @return An instance of the Player we just created.
+     * Get all players.
+     * @return All players.
+     */
+    @RequestMapping
+    public Iterable<Player> getAllPlayers()
+    {
+        return playerService.getAllPlayers();
+    }
+
+    /**
+     * Create a new player with the given data.
+     * @param player The data with which to create the player.
+     * @return The created player.
      */
     @PostMapping
     public Player createPlayer(@Valid @RequestBody Player player)
     {
-        return repository.save(player);
+        return playerService.createPlayer(player);
     }
 
 }

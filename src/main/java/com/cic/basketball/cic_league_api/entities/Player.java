@@ -19,7 +19,7 @@ public class Player {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NotNull
     @Column(name = "first_name", length = 255, nullable = false)
@@ -37,7 +37,8 @@ public class Player {
     @Column(nullable = false, precision = 5, scale = 2)
     private BigDecimal height;
 
+    @ManyToOne
     @NotNull
-    @Column(name = "team_id", nullable = false)
-    private Integer teamId;
+    @JoinColumn(name = "team_id", nullable = false)
+    private Team teamId;
 }
