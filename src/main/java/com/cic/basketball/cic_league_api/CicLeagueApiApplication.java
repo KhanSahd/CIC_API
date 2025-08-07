@@ -4,10 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CicLeagueApiApplication {
+public class CicLeagueApiApplication
+{
 
-	public static void main(String[] args) {
-		SpringApplication.run(CicLeagueApiApplication.class, args);
-	}
+    public static void main( String[] args )
+    {
+        SpringApplication.run( CicLeagueApiApplication.class, args );
+    }
 
 }

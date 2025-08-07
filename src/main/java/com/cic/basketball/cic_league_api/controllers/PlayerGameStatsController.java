@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/games/{gameId}")
+@RequestMapping( "/games/{gameId}" )
 public class PlayerGameStatsController
 {
     private final PlayerGameStatsService gameStatsService;
 
-    public PlayerGameStatsController(PlayerGameStatsService gameStatsService)
+    public PlayerGameStatsController( PlayerGameStatsService gameStatsService )
     {
         this.gameStatsService = gameStatsService;
     }
 
     @RequestMapping
-    public Iterable<PlayerGameStats> getAllGameStats()
+    public Iterable< PlayerGameStats > getAllGameStats()
     {
         return gameStatsService.getAllGameStats();
     }
 
     @PostMapping
-    public PlayerGameStats createGame(@Valid @RequestBody PlayerGameStats requestBody)
+    public PlayerGameStats createGame( @Valid @RequestBody PlayerGameStats requestBody )
     {
-        return gameStatsService.createGameStats(requestBody);
+        return gameStatsService.createGameStats( requestBody );
     }
 }

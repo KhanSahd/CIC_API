@@ -6,18 +6,18 @@ import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/teams")
+@RequestMapping( "/teams" )
 public class TeamController
 {
     private final TeamService teamService;
 
-    public TeamController(TeamService teamService)
+    public TeamController( TeamService teamService )
     {
         this.teamService = teamService;
     }
 
     @GetMapping
-    public Iterable<Team> getAllTeams()
+    public Iterable< Team > getAllTeams()
     {
         return teamService.getAllTeams();
     }
@@ -25,6 +25,6 @@ public class TeamController
     @PostMapping
     public Team createTeam( @Valid @RequestBody Team team )
     {
-        return teamService.createTeam(team);
+        return teamService.createTeam( team );
     }
 }

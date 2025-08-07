@@ -9,24 +9,24 @@ public class PlayerService
 {
     private final PlayerRepository playerRepository;
 
-    public PlayerService(PlayerRepository playerRepository)
+    public PlayerService( PlayerRepository playerRepository )
     {
         this.playerRepository = playerRepository;
     }
 
-    public Iterable<Player> getAllPlayers()
+    public Iterable< Player > getAllPlayers()
     {
         return playerRepository.findAll();
     }
 
-    public Player createPlayer(Player player)
+    public Player createPlayer( Player player )
     {
         // TODO: Add validation
-        return playerRepository.save(player);
+        return playerRepository.save( player );
     }
 
-    public Player getPlayerById(Long id)
+    public Player getPlayerById( Long id )
     {
-        return playerRepository.findById(id).orElse(null);
+        return playerRepository.findById( id ).orElse( null );
     }
 }

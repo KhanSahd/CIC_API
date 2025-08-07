@@ -12,30 +12,30 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Seasons")
+@Table( name = "Seasons" )
 public class Season
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long id;
 
     @NotNull
-    @Column(name = "season_number", nullable = false)
+    @Column( name = "season_number", nullable = false )
     private Long seasonNumber;
 
     @ManyToOne
-    @JoinColumn(name = "Champions", nullable = true)
+    @JoinColumn( name = "Champions", nullable = true )
     private Team champions;
 
     @ManyToOne
-    @JoinColumn(name = "MVP", nullable = true)
+    @JoinColumn( name = "MVP", nullable = true )
     private Player mvp;
 
     @ManyToOne
-    @JoinColumn(name = "Rookie_of_Year", nullable = true)
+    @JoinColumn( name = "Rookie_of_Year", nullable = true )
     private Player rookieOfTheYear;
 
-    @Column(name = "Status", nullable = true)
+    @Column( name = "Status", nullable = true )
     private String status;
 
 }

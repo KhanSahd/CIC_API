@@ -12,42 +12,42 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Player_Game_Stats")
+@Table( name = "Player_Game_Stats" )
 public class PlayerGameStats
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long id;
 
     @ManyToOne
     @NotNull
-    @JoinColumn(name = "player_id", nullable = false)
+    @JoinColumn( name = "player_id", nullable = false )
     private Player player;
 
     @ManyToOne
     @NotNull
-    @JoinColumn(name = "game_id", nullable = false)
+    @JoinColumn( name = "game_id", nullable = false )
     private Game game;
 
-    @Column(name = "points", nullable = true)
+    @Column( name = "points", nullable = true )
     private Byte points;
 
-    @Column(name = "rebounds", nullable = true)
+    @Column( name = "rebounds", nullable = true )
     private Byte rebounds;
 
-    @Column(name = "assists", nullable = true)
+    @Column( name = "assists", nullable = true )
     private Byte assists;
 
-    @Column(name = "turnovers", nullable = true)
+    @Column( name = "turnovers", nullable = true )
     private Byte turnovers;
 
-    @Column(name = "steals", nullable = true)
+    @Column( name = "steals", nullable = true )
     private Byte steals;
 
-    @Column(name = "blocks", nullable = true)
+    @Column( name = "blocks", nullable = true )
     private Byte blocks;
 
-    @Column(name = "fouls", nullable = true)
+    @Column( name = "fouls", nullable = true )
     private Byte fouls;
 
 }

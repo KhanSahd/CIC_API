@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/seasons")
+@RequestMapping( "/seasons" )
 public class SeasonController
 {
     private final SeasonService seasonService;
 
-    public SeasonController(SeasonService seasonService)
+    public SeasonController( SeasonService seasonService )
     {
         this.seasonService = seasonService;
     }
 
     @RequestMapping
-    public Iterable<Season> getAllSeasons()
+    public Iterable< Season > getAllSeasons()
     {
         return seasonService.getAllSeasons();
     }
 
     @PostMapping
-    public Season createSeason(@Valid @RequestBody Season season)
+    public Season createSeason( @Valid @RequestBody Season season )
     {
-        return seasonService.createSeason(season);
+        return seasonService.createSeason( season );
     }
 }

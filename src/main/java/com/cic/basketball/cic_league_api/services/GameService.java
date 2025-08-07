@@ -9,25 +9,25 @@ public class GameService
 {
     private final GamesRepository gamesRepository;
 
-    public GameService(GamesRepository gamesRepository)
+    public GameService( GamesRepository gamesRepository )
     {
         this.gamesRepository = gamesRepository;
     }
 
-    public Iterable<Game> getAllGames()
+    public Iterable< Game > getAllGames()
     {
         return gamesRepository.findAll();
     }
 
-    public Game createGame(Game game)
+    public Game createGame( Game game )
     {
         // TODO: Add validation
-        return gamesRepository.save(game);
+        return gamesRepository.save( game );
     }
 
-    public Game getGameById(Long id)
+    public Game getGameById( Long id )
     {
-        return gamesRepository.findById(id).orElse(null);
+        return gamesRepository.findById( id ).orElse( null );
     }
 
 }

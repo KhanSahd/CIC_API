@@ -9,24 +9,24 @@ public class TeamService
 {
     private final TeamsRepository teamsRepository;
 
-    public TeamService(TeamsRepository teamsRepository)
+    public TeamService( TeamsRepository teamsRepository )
     {
         this.teamsRepository = teamsRepository;
     }
 
-    public Team createTeam(Team team)
+    public Team createTeam( Team team )
     {
         // TODO: Add validation
-        return teamsRepository.save(team);
+        return teamsRepository.save( team );
     }
 
-    public Iterable<Team> getAllTeams()
+    public Iterable< Team > getAllTeams()
     {
         return teamsRepository.findAll();
     }
 
-    public Team getTeamById(Long id)
+    public Team getTeamById( Long id )
     {
-        return teamsRepository.findById(id).orElse(null);
+        return teamsRepository.findById( id ).orElse( null );
     }
 }

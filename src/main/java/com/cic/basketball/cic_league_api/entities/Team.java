@@ -12,18 +12,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "Teams")
+@Table( name = "Teams" )
 public class Team
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long id;
 
     @NotNull
-    @Column(name = "name", length = 255, nullable = false)
+    @Column( name = "name", length = 255, nullable = false )
     private String name;
 
-    @Column(name = "team_logo", nullable = true)
+    @Column( name = "team_logo", nullable = true )
     private String teamLogoUrl;
 
 }

@@ -9,34 +9,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/games")
+@RequestMapping( "/games" )
 public class GameController
 {
     private final GameService gameService;
 
     /**
      * Constructor for the GamesController class.
+     *
      * @param gameService The game service to use.
      */
-    public GameController(GameService gameService)
+    public GameController( GameService gameService )
     {
         this.gameService = gameService;
     }
 
     @RequestMapping
-    public Iterable<Game> getAllGames()
+    public Iterable< Game > getAllGames()
     {
         return gameService.getAllGames();
     }
 
     /**
      * Create a new game with the given data.
+     *
      * @param requestBody The data with which to create the game.
      * @return The created game.
      */
     @PostMapping
-    public Game createGame(@Valid @RequestBody Game requestBody)
+    public Game createGame( @Valid @RequestBody Game requestBody )
     {
-        return gameService.createGame(requestBody);
+        return gameService.createGame( requestBody );
     }
 }

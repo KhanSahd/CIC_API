@@ -14,29 +14,29 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @Entity
-@Table(name = "Games")
+@Table( name = "Games" )
 public class Game
 {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long id;
 
     @NotNull
-    @Column(name = "date", nullable = false)
+    @Column( name = "date", nullable = false )
     private LocalDateTime date;
 
     @ManyToOne
     @NotNull
-    @JoinColumn(name = "home_team_id", nullable = false)
+    @JoinColumn( name = "home_team_id", nullable = false )
     private Team homeTeam;
 
     @ManyToOne
     @NotNull
-    @JoinColumn(name = "away_team_id", nullable = false)
+    @JoinColumn( name = "away_team_id", nullable = false )
     private Team awayTeam;
 
     @ManyToOne
     @NotNull
-    @JoinColumn(name = "season_id", nullable = false)
+    @JoinColumn( name = "season_id", nullable = false )
     private Season season;
 }

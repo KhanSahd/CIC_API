@@ -9,24 +9,24 @@ public class PlayerGameStatsService
 {
     private final PlayerGameStatsRepository gameStatsRepository;
 
-    public PlayerGameStatsService(PlayerGameStatsRepository gameStatsRepository)
+    public PlayerGameStatsService( PlayerGameStatsRepository gameStatsRepository )
     {
         this.gameStatsRepository = gameStatsRepository;
     }
 
-    public Iterable<PlayerGameStats> getAllGameStats()
+    public Iterable< PlayerGameStats > getAllGameStats()
     {
         return gameStatsRepository.findAll();
     }
 
-    public PlayerGameStats createGameStats(PlayerGameStats gameStats)
+    public PlayerGameStats createGameStats( PlayerGameStats gameStats )
     {
         // TODO: Add validation
-        return gameStatsRepository.save(gameStats);
+        return gameStatsRepository.save( gameStats );
     }
 
-    public PlayerGameStats getGameStatsById(Long id)
+    public PlayerGameStats getGameStatsById( Long id )
     {
-        return gameStatsRepository.findById(id).orElse(null);
+        return gameStatsRepository.findById( id ).orElse( null );
     }
 }
