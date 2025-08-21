@@ -21,18 +21,20 @@ public class SeasonPlayer
     @GeneratedValue( strategy = GenerationType.IDENTITY )
     private Long id;
 
+    @ManyToOne
     @NotNull
-    @Column( name = "season_id", length = 255, nullable = false )
-    private Long seasonId;
-
-    @NotNull
-    @Column( name = "player_id", length = 255, nullable = false )
-    private Long playerId;
+    @JoinColumn( name = "season_id", nullable = false )
+    private Season seasonId;
 
     @ManyToOne
     @NotNull
-    @Column( name = "team_id", length = 255, nullable = false )
-    private Long teamId;
+    @JoinColumn( name = "player_id", nullable = false )
+    private Player playerId;
+
+    @ManyToOne
+    @NotNull
+    @JoinColumn( name = "team_id", nullable = false )
+    private Team teamId;
 
     @NotNull
     @Column( name = "jersey_number" )
